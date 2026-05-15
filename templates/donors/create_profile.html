@@ -1,0 +1,63 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+    Create Donor Profile
+{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow">
+            <div class="card-body">
+                <h2 class="text-center mb-4">Create Donor Profile</h2>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-6 mb-3"> 
+                            <label>Blood Group</label>
+                            {{ form.blood_group }}
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>Gender</label>
+                            {{ form.gender }}
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label>Age</label>
+                        {{ form.age }}
+                    </div>
+                    <div class="mb-3">
+                        <label>Address </label>
+                        {{ form.address }}
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label>City</label>
+                            {{ form.city }}
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label>State</label>
+                            {{ form.state }}
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label>Profile Image</label>
+                        {{ form.profile_image }}
+                    </div>
+                    <div class="mb-3">
+                        <label>Last Donation Date</label>
+                        {{ form.last_donation_date }}
+                    </div>
+                    <div class="form-check mb-3">
+                        {{ form.availability_status }}
+                        <label class="form-check-label">Available for Donation</label>
+                    </div>
+                    <button type="submit" class="btn btn-danger w-100">Save Profile</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>`  
+ 
+{% endblock %}
